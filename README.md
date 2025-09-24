@@ -1,69 +1,95 @@
-# React + TypeScript + Vite
+# Catalysts
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official website for Catalyst, built using Deno, Vite, and React.
+The project is bootstrapped with TanStack Router for advanced routing capabilities.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Make sure you have the following installed:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [Deno](https://deno.land/manual/getting_started/installation)
+- [Node.js](https://nodejs.org)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Clone the repository:
+
+```bash
+git clone https://github.com/catalyst-ioit/catalysts-web.git
+cd catalysts-web
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+deno install --allow-scripts=npm:@swc/core,npm:@tailwindcss/oxide
 ```
+
+### Development Server
+
+To start the local development server:
+
+```bash
+deno task dev
+```
+
+This will start Vite and serve the React app locally, usually at `http://localhost:5173`.
+
+### Build for Production
+
+```bash
+deno task build
+```
+
+Build files will be generated in the `dist/` directory.
+
+---
+
+## Contributing
+
+We welcome contributions! Please follow the guidelines below depending on your contributor type.
+
+### For Organization Members
+
+- **Do not push directly to `main`.**
+- If you have been explicitly granted permission, you may push to `main` after review.
+- For all other members:
+  - Create a new **feature branch** (from the latest `main`).
+  - Push your changes to the feature branch.
+  - Create a **Pull Request** (PR) targeting the `main` branch.
+  - Ensure your PR has a clear description of the changes and reasoning.
+
+### For External Contributors
+
+- **Fork the repository** to your own GitHub account.
+- Create a new branch in your fork for your changes.
+- Commit and push your work to your fork.
+- Open a **Pull Request** from your forked repo into our `main` branch.
+- Your PR will be reviewed by maintainers before merging.
+
+---
+
+## Code Style
+
+- Follow standard React + TypeScript conventions.
+- Use Prettier/ESLint (if configured) to keep code consistent.
+- Write meaningful commit messages.
+
+---
+
+## Issues and Discussions
+
+- Found a bug? Open an **Issue** with details and steps to reproduce.
+- Have an idea or feature request? Start a **Discussion** or propose it before working on a PR.
+
+---
+
+## License
+
+This project is under the [MIT License](LICENSE).
+
+---
