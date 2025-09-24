@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+@import "tailwindcss";
+
+
+
+@theme {
+    --font-unbounded: "Unbounded", sans-serif;
+    --font-inter-tight: "Inter Tight", sans-serif;
+}
