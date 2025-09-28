@@ -1,4 +1,5 @@
-# Catalysts
+<a name="top"></a>
+[![Tenet Hack Banner](public/github_banner.png)](https://catalysts-ioit.org)
 
 This is the official website for Catalyst, built using Deno, Vite, and React.
 The project is bootstrapped with TanStack Router for advanced routing capabilities.
