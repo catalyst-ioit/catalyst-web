@@ -14,8 +14,10 @@
     "@tanstack/react-router": "^1.131.49",
     "@tanstack/react-router-devtools": "^1.131.49",
     "@tanstack/router-plugin": "^1.131.49",
+    "framer-motion": "^12.23.22",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-intersection-observer": "^9.16.0",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
