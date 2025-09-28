@@ -1,6 +1,5 @@
 import React from 'react';
 import { TripleStarIcon, WavyLine } from './ui/icons.tsx';
-// Fix: Import Variants type from framer-motion
 import { motion, type Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -10,7 +9,6 @@ const Expertise: React.FC = () => {
         threshold: 0.3,
     });
 
-    // Fix: Add Variants type to animationVariants
     const animationVariants: Variants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
