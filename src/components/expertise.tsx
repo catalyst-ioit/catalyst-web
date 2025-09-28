@@ -1,7 +1,9 @@
 import React from 'react';
 import { TripleStarIcon, WavyLine } from './ui/icons.tsx';
+// Fix: Import Variants type from framer-motion
 import { motion, type Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { CursorHover } from './cursorProvider.tsx';
 
 const Expertise: React.FC = () => {
     const { ref, inView } = useInView({
@@ -32,9 +34,11 @@ const Expertise: React.FC = () => {
                 initial="hidden"
                 animate={inView ? 'visible' : 'hidden'}
             >
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-medium text-white leading-none tracking-tighter font-heading">
-                    Our Team and <br /> Culture
-                </h2>
+                <CursorHover variant="text">
+                    <h2 className="text-5xl sm:text-6xl md:text-7xl font-medium text-white leading-none tracking-tighter font-heading">
+                        Our Team and <br /> Culture
+                    </h2>
+                </CursorHover>
                 <div className="mt-4">
                     <WavyLine id="expertise" />
                 </div>
@@ -42,9 +46,11 @@ const Expertise: React.FC = () => {
                 <div className="mt-20">
                     <div className="max-w-4xl space-y-8">
                         <TripleStarIcon className="w-20 h-10 opacity-50" />
-                        <p className="text-lg text-white/70 leading-relaxed">
-                            Our greatest asset is our team—a diverse group of passionate students driven by collaboration and problem-solving. We sharpen our skills in competitive hackathons and foster a culture of continuous learning through workshops and tech talks. If you're an AISSMS IOIT student with a passion for building and creating, join our vibrant community to work on exciting projects and help us tackle new challenges.
-                        </p>
+                        <CursorHover variant="text">
+                            <p className="text-lg text-white/70 leading-relaxed">
+                                Our greatest asset is our team—a diverse group of passionate students driven by collaboration and problem-solving. We sharpen our skills in competitive hackathons and foster a culture of continuous learning through workshops and tech talks. If you're an AISSMS IOIT student with a passion for building and creating, join our vibrant community to work on exciting projects and help us tackle new challenges.
+                            </p>
+                        </CursorHover>
                     </div>
                 </div>
             </motion.div>

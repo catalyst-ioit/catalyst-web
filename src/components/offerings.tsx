@@ -32,20 +32,26 @@ const cardVariants: Variants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
 };
 
-const OfferingCard: React.FC<Offering> = ({ title, description, imageUrl }) => (
-    <motion.div
-        className="border border-white/20 flex flex-col h-full bg-[#1a1a1a] group overflow-hidden"
-        variants={cardVariants}
-    >
-        <div className="overflow-hidden h-48 flex">
-            <img src={imageUrl} alt={title} className=" object-contain group-hover:scale-105 my-auto mx-auto transition-transform duration-300" />
-        </div>
-        <div className="p-8 flex-grow flex flex-col">
-            <h3 className="text-3xl font-medium bg-gradient-to-r from-purple-400 via-pink-400 to-white bg-clip-text text-transparent tracking-tight font-heading">{title}</h3>
-            <p className="mt-4 text-white/70 leading-relaxed flex-grow">{description}</p>
-        </div>
-    </motion.div>
-);
+const OfferingCard: React.FC<Offering> = ({ title, description, imageUrl }) => {
+    return (
+        <motion.div
+            className="border border-white/20 flex flex-col h-full bg-[#1a1a1a] group overflow-hidden"
+            variants={cardVariants}
+        >
+            <div
+                className="w-full h-full flex flex-col"
+            >
+                <div className="overflow-hidden h-48 flex">
+                    <img src={imageUrl} alt={title} className=" object-contain group-hover:scale-105 my-auto mx-auto transition-transform duration-300" />
+                </div>
+                <div className="p-8 flex-grow flex flex-col">
+                    <h3 className="text-3xl font-medium bg-gradient-to-r from-purple-400 via-pink-400 to-white bg-clip-text text-transparent tracking-tight font-heading">{title}</h3>
+                    <p className="mt-4 text-white/70 leading-relaxed flex-grow">{description}</p>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 
 const Offerings: React.FC = () => {
