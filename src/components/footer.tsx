@@ -3,6 +3,7 @@ import { InstagramIcon } from './ui/icons.tsx';
 import { motion, type Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { CursorHover } from './cursorProvider.tsx';
+import { Link } from '@tanstack/react-router';
 
 const containerVariants: Variants = {
     hidden: { opacity: 1 },
@@ -27,7 +28,6 @@ const Footer: React.FC = () => {
             className="bg-[#111111] border-t border-white/10 "
         >
             <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 md:px-8">
-                {/* Top Section */}
                 <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
                     variants={containerVariants}
@@ -36,9 +36,9 @@ const Footer: React.FC = () => {
                 >
                     <motion.div className="md:col-span-2 lg:col-span-1" variants={itemVariants}>
                         <CursorHover variant="link">
-                            <a href="/" aria-label="Go to homepage">
+                            <Link to="/" aria-label="Go to homepage">
                                 <img src="/catalysts_text.svg" alt="Catalysts Logo" className="h-10" />
-                            </a>
+                            </Link>
                         </CursorHover>
                         <CursorHover variant="text">
                             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-xs">
@@ -47,8 +47,29 @@ const Footer: React.FC = () => {
                         </CursorHover>
                     </motion.div>
 
-                    <motion.div variants={itemVariants}><FooterLinkColumn title="Explore" links={['About Us', 'Our Team', 'Projects', 'Events', 'Hackathons']} /></motion.div>
-                    <motion.div variants={itemVariants}><FooterLinkColumn title="Get Involved" links={['Join Us', 'Collaborate', 'Sponsor', 'Contact']} /></motion.div>
+                    <motion.div variants={itemVariants}>
+                        <FooterLinkColumn
+                            title="Explore"
+                            links={[
+                                { name: 'About Us', href: '/about' },
+                                { name: 'Our Team', href: '/team' },
+                                { name: 'Projects', href: '/projects' },
+                                { name: 'Events', href: '/events' },
+                                { name: 'Hackathons', href: '/hackathons' },
+                            ]}
+                        />
+                    </motion.div>
+                    <motion.div variants={itemVariants}>
+                        <FooterLinkColumn
+                            title="Get Involved"
+                            links={[
+                                { name: 'Join Us', href: '/joinus' },
+                                { name: 'Collaborate', href: '/collaborate' },
+                                { name: 'Sponsor', href: '/sponsor' },
+                                { name: 'Contact', href: '/contact' },
+                            ]}
+                        />
+                    </motion.div>
 
                     <motion.div variants={itemVariants}>
                         <h3 className="text-sm font-semibold tracking-wider uppercase font-heading text-white">Connect</h3>
@@ -65,8 +86,6 @@ const Footer: React.FC = () => {
                         </div>
                     </motion.div>
                 </motion.div>
-
-                {/* Bottom Section */}
                 <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-sm text-white/50">
                     <p>&copy; {new Date().getFullYear()} Catalysts Committee, AISSMS IOIT. All Rights Reserved.</p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
@@ -79,16 +98,16 @@ const Footer: React.FC = () => {
     );
 };
 
-const FooterLinkColumn: React.FC<{ title: string; links: string[] }> = ({ title, links }) => (
+const FooterLinkColumn: React.FC<{ title: string; links: { name: string, href: string }[] }> = ({ title, links }) => (
     <div>
         <h3 className="text-sm font-semibold tracking-wider uppercase font-heading text-white">{title}</h3>
         <ul className="mt-6 space-y-4">
             {links.map(link => (
-                <li key={link}>
+                <li key={link.name}>
                     <CursorHover variant="link">
-                        <a href="#" className="text-sm text-white/60 hover:text-white transition-colors">
-                            {link}
-                        </a>
+                        <Link to={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
+                            {link.name}
+                        </Link>
                     </CursorHover>
                 </li>
             ))}

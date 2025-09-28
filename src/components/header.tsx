@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GlobeIcon } from './ui/icons.tsx';
 import { CursorHover } from './cursorProvider.tsx'
+import { Link } from '@tanstack/react-router';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,29 +9,29 @@ const Header: React.FC = () => {
     const navLinks = ['ABOUT', 'SERVICES', 'CONTACT', 'TEAM', 'PARTNERS', 'PROJECTS', 'JOIN US', 'GALLERY'];
 
     const NavItem: React.FC<{ href: string; className: string; children: React.ReactNode }> = ({ href, className, children }) => (
-        <a href={href} className={className}>
+        <Link to={href} className={className}>
             <CursorHover variant="link" className="m-auto w-full h-full flex items-center justify-center">
                 <p className="m-auto">{children}</p>
             </CursorHover>
-        </a>
+        </Link>
     );
 
     const NavGrid: React.FC = () => (
         <div className="hidden lg:grid grid-rows-2 font-sans text-white/90 w-full text-xs tracking-widest">
             <div className="grid grid-cols-10 row-span-1 items-center border-b border-white/20 w-full">
-                <NavItem href="about" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">ABOUT</NavItem>
-                <NavItem href="services" className="col-span-3 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">SERVICES</NavItem>
-                <NavItem href="contact" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">CONTACT</NavItem>
-                <NavItem href="team" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">TEAM</NavItem>
+                <NavItem href="/about" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">ABOUT</NavItem>
+                <NavItem href="/services" className="col-span-3 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">SERVICES</NavItem>
+                <NavItem href="/contact" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">CONTACT</NavItem>
+                <NavItem href="/team" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">TEAM</NavItem>
                 <div className="col-span-1 text-center h-full flex items-center justify-center">
                     <CursorHover variant="link"><GlobeIcon /></CursorHover>
                 </div>
             </div>
             <div className="grid grid-cols-10 row-span-1 items-center w-full">
-                <NavItem href="partners" className="col-span-4 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">PARTNERS</NavItem>
-                <NavItem href="projects" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">PROJECTS</NavItem>
-                <NavItem href="joinus" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">JOIN US</NavItem>
-                <NavItem href="gallery" className="col-span-2 text-center h-full flex hover:bg-white/5 transition-colors">GALLERY</NavItem>
+                <NavItem href="/partners" className="col-span-4 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">PARTNERS</NavItem>
+                <NavItem href="/projects" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">PROJECTS</NavItem>
+                <NavItem href="/joinus" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">JOIN US</NavItem>
+                <NavItem href="/gallery" className="col-span-2 text-center h-full flex hover:bg-white/5 transition-colors">GALLERY</NavItem>
             </div>
         </div>
     );
@@ -41,9 +42,9 @@ const Header: React.FC = () => {
                 <div className="flex flex-row border border-white/20 backdrop-blur-md">
                     <div className="border-r border-white/20 px-6 lg:px-12 py-4 flex items-center gap-8">
                         <CursorHover variant="link">
-                            <a href="/" aria-label="Go to homepage">
+                            <Link to="/" aria-label="Go to homepage">
                                 <img src="/catalysts_text.svg" alt="Catalysts Logo" className="h-12" />
-                            </a>
+                            </Link>
                         </CursorHover>
                         <CursorHover variant="text" className="w-40">
                             <p className="font-sans text-sm lg:block hidden text-white">Changing the world one step at a time.</p>
@@ -67,7 +68,7 @@ const Header: React.FC = () => {
                 </div>
                 <nav className="flex flex-col items-center justify-center h-full -mt-16 px-8">
                     {navLinks.map((link) => (
-                        <a key={link} href={link.split(" ").join("").toLowerCase()} onClick={() => setIsMenuOpen(false)} className="text-3xl text-white py-4 w-full text-center hover:bg-white/10 rounded-md transition-colors">{link}</a>
+                        <Link key={link} to={link.split(" ").join("").toLowerCase()} onClick={() => setIsMenuOpen(false)} className="text-3xl text-white py-4 w-full text-center hover:bg-white/10 rounded-md transition-colors">{link}</Link>
                     ))}
                 </nav>
             </div>

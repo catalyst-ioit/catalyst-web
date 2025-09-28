@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowRightIcon } from './ui/icons.tsx';
+import { Link } from '@tanstack/react-router';
 
 const pageVariants: Variants = {
     hidden: { opacity: 0 },
@@ -54,13 +55,13 @@ const NotFoundPage: React.FC = () => {
                         variants={itemVariants}
                         className="mt-12"
                     >
-                        <a
-                            href="/"
+                        <Link
+                            to="/"
                             className="group inline-flex items-center justify-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#111111] focus:ring-purple-500"
                         >
                             Go Back Home
                             <ArrowRightIcon className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </Link>
                     </motion.div>
                 </motion.div>
             </section>
