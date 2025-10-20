@@ -3,7 +3,7 @@ import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { WavyLine, ArrowRightIcon } from '../components/ui/icons.tsx';
-import { partnersData } from '../data/partnersData.ts';
+// import { partnersData } from '../data/partnersData.ts';
 const pageVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -24,15 +24,15 @@ const sectionVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 };
 
-const logoGridVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
+// const logoGridVariants: Variants = {
+//   hidden: {},
+//   visible: { transition: { staggerChildren: 0.1 } },
+// };
 
-const logoItemVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
-};
+// const logoItemVariants: Variants = {
+//   hidden: { opacity: 0, scale: 0.8 },
+//   visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+// };
 
 // Reusable animated section component
 const AnimatedSection: React.FC<{ children: React.ReactNode, className?: string }> = ({ children, className }) => {
