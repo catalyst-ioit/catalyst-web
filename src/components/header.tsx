@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                 </div>
                 <nav className="flex flex-col items-center justify-center h-full -mt-16 px-8">
                     {navLinks.map((link) => (
-                        <Link key={link} to={link.split(" ").join("").toLowerCase()} onClick={() => setIsMenuOpen(false)} className="text-3xl text-white py-4 w-full text-center hover:bg-white/10 rounded-md transition-colors">{link}</Link>
+                        <Link key={link} to={"/" + link.split(" ").join("").toLowerCase()} onClick={() => setIsMenuOpen(false)} className="text-3xl text-white py-4 w-full text-center hover:bg-white/10 rounded-md transition-colors">{link}</Link>
                     ))}
                 </nav>
             </div>
