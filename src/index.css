@@ -8,3 +8,7 @@
     --font-sans: "Inter Tight", sans-serif;
     --font-poppins: "Poppins", sans-serif;
 }
+
+:root {
+    background-color: #111111;
+}

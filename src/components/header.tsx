@@ -36,14 +36,14 @@ const Header: React.FC = () => {
         </div>
     );
 
-    return (
+    return (<>
         <header className="absolute top-0 left-0 right-0 z-20 p-4 sm:p-6 md:p-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-row border border-white/20 backdrop-blur-md">
                     <div className="border-r border-white/20 px-6 lg:px-12 py-4 flex items-center gap-8">
                         <CursorHover variant="link">
                             <Link to="/" aria-label="Go to homepage">
-                                <img src="/catalysts_text.svg" alt="Catalysts Logo" className="h-12" />
+                                <img src="/catalyst_text.svg" alt="Catalyst Logo" className="h-12" />
                             </Link>
                         </CursorHover>
                         <CursorHover variant="text" className="w-40">
@@ -73,6 +73,7 @@ const Header: React.FC = () => {
                 </nav>
             </div>
         </header>
+    </>
     );
 };
 

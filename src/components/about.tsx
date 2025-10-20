@@ -53,7 +53,7 @@ const About: React.FC = () => {
                     >
                         <CursorHover variant="text">
                             <p className="text-white/70 leading-relaxed">
-                                Catalysts is a dedicated student committee at AISSMS IOIT, founded on the principle of applying classroom knowledge to solve tangible, real-world problems. We are a collective of passionate thinkers, coders, and creators.
+                                Catalyst is a dedicated student committee at AISSMS IOIT, founded on the principle of applying classroom knowledge to solve tangible, real-world problems. We are a collective of passionate thinkers, coders, and creators.
                             </p>
                             <p className="text-white/70 leading-relaxed mt-8">
                                 Our mission is to bridge the gap between academic theory and practical application. We foster a culture of innovation, compete in national hackathons, and promote hands-on learning within our community.
@@ -72,7 +72,7 @@ const About: React.FC = () => {
                             </div>
                             <div className="flex justify-center md:justify-end pt-8">
                                 <div className="relative w-48 h-48">
-                                    <img src="/homepage/ball.png" alt="Catalysts committee members collaborating on a project" className="w-full h-full object-cover rounded-lg shadow-lg" />
+                                    <img src="/homepage/ball.png" alt="Catalyst committee members collaborating on a project" className="w-full h-full object-cover rounded-lg shadow-lg" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"></div>
                                     <p className="text-xs text-white/90 absolute bottom-4 right-4">Established 2025</p>
                                 </div>

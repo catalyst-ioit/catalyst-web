@@ -1,5 +1,5 @@
 import React from 'react';
-import { InstagramIcon } from './ui/icons.tsx';
+import { InstagramIcon, LinkedInIcon } from './ui/icons.tsx';
 import { motion, type Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { CursorHover } from './cursorProvider.tsx';
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                     <motion.div className="md:col-span-2 lg:col-span-1" variants={itemVariants}>
                         <CursorHover variant="link">
                             <Link to="/" aria-label="Go to homepage">
-                                <img src="/catalysts_text.svg" alt="Catalysts Logo" className="h-10" />
+                                <img src="/catalyst_text.svg" alt="Catalyst Logo" className="h-10" />
                             </Link>
                         </CursorHover>
                         <CursorHover variant="text">
@@ -54,8 +54,6 @@ const Footer: React.FC = () => {
                                 { name: 'About Us', href: '/about' },
                                 { name: 'Our Team', href: '/team' },
                                 { name: 'Projects', href: '/projects' },
-                                { name: 'Events', href: '/events' },
-                                { name: 'Hackathons', href: '/hackathons' },
                             ]}
                         />
                     </motion.div>
@@ -64,8 +62,7 @@ const Footer: React.FC = () => {
                             title="Get Involved"
                             links={[
                                 { name: 'Join Us', href: '/joinus' },
-                                { name: 'Collaborate', href: '/collaborate' },
-                                { name: 'Sponsor', href: '/sponsor' },
+                                { name: 'Partner', href: '/parnters' },
                                 { name: 'Contact', href: '/contact' },
                             ]}
                         />
@@ -74,23 +71,21 @@ const Footer: React.FC = () => {
                     <motion.div variants={itemVariants}>
                         <h3 className="text-sm font-semibold tracking-wider uppercase font-heading text-white">Connect</h3>
                         <div className="mt-6 flex space-x-6">
-                            {/* <CursorHover variant="link"><a href="#" className="text-white/60 hover:text-white transition-colors"><TwitterIcon className="h-6 w-6" /></a></CursorHover>
-                            <CursorHover variant="link"><a href="#" className="text-white/60 hover:text-white transition-colors"><LinkedInIcon className="h-6 w-6" /></a></CursorHover> */}
+                            {/* <CursorHover variant="link"><a href="#" className="text-white/60 hover:text-white transition-colors"><TwitterIcon className="h-6 w-6" /></a></CursorHover> */}
+                            <CursorHover variant="link"><a href="https://www.linkedin.com/company/catalystioit/" className="text-white/60 hover:text-white transition-colors"><LinkedInIcon className="h-6 w-6" /></a></CursorHover>
                             <CursorHover variant="link"><a href="https://www.instagram.com/catalyst.ioit/" className="text-white/60 hover:text-white transition-colors"><InstagramIcon className="h-6 w-6" /></a></CursorHover>
                         </div>
                         <div className="mt-8">
                             <p className="text-sm text-white/60">Get in touch:</p>
                             <CursorHover variant="link">
-                                <a href="mailto:catalysts@aissmsioit.org" className="text-sm text-white/80 hover:text-white transition-colors mt-1 block">catalysts@aissmsioit.org</a>
+                                <a href="mailto:catalyst@aissmsioit.org" className="text-sm text-white/80 hover:text-white transition-colors mt-1 block">catalyst@aissmsioit.org</a>
                             </CursorHover>
                         </div>
                     </motion.div>
                 </motion.div>
-                <div className="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-sm text-white/50">
-                    <p>&copy; {new Date().getFullYear()} Catalysts Committee, AISSMS IOIT. All Rights Reserved.</p>
+                <div className="mt-16 pt-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-sm text-white/50">
+                    <p>&copy; {new Date().getFullYear()} Catalyst Committee, AISSMS IOIT. All Rights Reserved.</p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
-                        <CursorHover variant="link"><a href="#" className="hover:text-white transition-colors">College Website</a></CursorHover>
-                        <CursorHover variant="link"><a href="#" className="hover:text-white transition-colors">Code of Conduct</a></CursorHover>
                     </div>
                 </div>
             </div>

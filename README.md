@@ -1,5 +1,5 @@
 <a name="top"></a>
-[![Tenet Hack Banner](public/github_banner.png)](https://catalysts-ioit.org)
+[![Tenet Hack Banner](public/github_banner.png)](https://Catalyst-ioit.org)
 
 This is the official website for Catalyst, built using Deno, Vite, and React.
 The project is bootstrapped with TanStack Router for advanced routing capabilities.
@@ -20,8 +20,8 @@ Make sure you have the following installed:
 Clone the repository:
 
 ```bash
-git clone https://github.com/catalyst-ioit/catalysts-web.git
-cd catalysts-web
+git clone https://github.com/catalyst-ioit/Catalyst-web.git
+cd Catalyst-web
 ```
 
 Install dependencies:

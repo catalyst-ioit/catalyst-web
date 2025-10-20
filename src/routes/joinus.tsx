@@ -43,7 +43,7 @@ function RouteComponent() {
   return (
     <motion.div initial="hidden" animate="visible" variants={pageVariants}>
       {/* Hero Section */}
-      <section className="relative py-32 md:py-40 px-4 sm:px-6 md:px-8 text-center overflow-hidden">
+      <section className="relative  min-h-[80vh] flex items-center justify-center py-32 md:py-40 px-4 sm:px-6 md:px-8 text-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img src="/homepage/hero_desktop.webp" alt="Abstract background" className="w-full h-full object-cover" />
         </div>

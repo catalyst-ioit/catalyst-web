@@ -2,6 +2,7 @@ import React from 'react';
 import { StarBurstIcon } from './ui/icons.tsx';
 import { motion, type Variants } from 'framer-motion';
 import { CursorHover } from './cursorProvider.tsx';
+import { Link } from '@tanstack/react-router';
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -104,22 +105,22 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 1.4 }}
             >
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <ServiceLink title="Our Projects" />
-                    <ServiceLink title="Technical Domains" />
-                    <ServiceLink title="Join The Team" />
-                    <ServiceLink title="Events & Workshops" />
+                    <ServiceLink href='projects' title="Our Projects" />
+                    <ServiceLink href='services' title="Technical Domains" />
+                    <ServiceLink href='joinus' title="Join The Team" />
+                    <ServiceLink href='gallery' title="Gallery" />
                 </div>
             </motion.div>
         </section>
     );
 };
 
-const ServiceLink: React.FC<{ title: string }> = ({ title }) => (
+const ServiceLink: React.FC<{ title: string, href?: string }> = ({ title, href = "#" }) => (
     <CursorHover variant="link">
-        <div className="group text-center md:text-left cursor-pointer">
+        <Link to={href} className="group text-center md:text-left cursor-pointer">
             <p className="text-sm font-medium tracking-widest text-white/80 uppercase">{title}</p>
             <div className="h-px mt-2 bg-white/20 group-hover:bg-white transition-colors duration-300"></div>
-        </div>
+        </Link>
     </CursorHover>
 );
 
