@@ -7,7 +7,7 @@ export interface TeamMember {
 export const faculties: TeamMember[] = [
 	{
 		name: "Dr. Pradeep Mane",
-		role: "Principal",
+		role: "Chairperson",
 		imageUrl: "/team/pradeep_mane.webp",
 		linkedinUrl: "https://www.linkedin.com/in/dr-pradeep-mane/",
 	},
