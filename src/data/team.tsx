@@ -229,17 +229,7 @@ export const coreMembers: TeamMember[] = [
 			},
 		],
 	},
-	{
-		name: "Harsh Surve",
-		role: "HR Team",
-		imageUrl: "/team/harsh_surve.webp",
-		socials: [
-			{
-				name: "linkedin",
-				url: "https://www.linkedin.com/in/harsh-surve-10616b294/",
-			},
-		],
-	},
+	
 	{
 		name: "Mrunal Thakare",
 		role: "HR Team",
