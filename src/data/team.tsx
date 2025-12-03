@@ -137,17 +137,6 @@ export const committeeLeads: TeamMember[] = [
 			},
 		],
 	},
-	{
-		name: "Sahil Khatri",
-		role: "CMO",
-		imageUrl: "/team/sahil_khatri.webp",
-		socials: [
-			{
-				name: "linkedin",
-				url: "https://www.linkedin.com/in/sahilkhatrii/",
-			},
-		],
-	},
 ];
 
 export const coreMembers: TeamMember[] = [
@@ -229,7 +218,6 @@ export const coreMembers: TeamMember[] = [
 			},
 		],
 	},
-	
 	{
 		name: "Mrunal Thakare",
 		role: "HR Team",
