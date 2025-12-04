@@ -125,7 +125,7 @@ function RouteComponent() {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white leading-none tracking-tighter font-heading"
             variants={heroItemVariants}
           >
-            Join The Catalyst
+            Join Us!
           </motion.h1>
 
           <motion.div className="mt-6 flex justify-center" variants={heroItemVariants}>
