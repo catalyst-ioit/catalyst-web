@@ -126,17 +126,6 @@ export const committeeLeads: TeamMember[] = [
 			},
 		],
 	},
-	{
-		name: "Mariya Momin",
-		role: "CHRO",
-		imageUrl: "/team/mariya_momin.webp",
-		socials: [
-			{
-				name: "linkedin",
-				url: "https://www.linkedin.com/in/mariya-momin-84096632b/",
-			},
-		],
-	},
 ];
 
 export const coreMembers: TeamMember[] = [
@@ -151,18 +140,6 @@ export const coreMembers: TeamMember[] = [
 			},
 		],
 	},
-	
-	{
-		name: "Sarvesh Kolte",
-		role: "Tech Team",
-		imageUrl: "/team/sarvesh_kolte.webp",
-		socials: [
-			{
-				name: "linkedin",
-				url: "https://www.linkedin.com/in/sarvesh-kolte-84a031181/",
-			},
-		],
-	},	
 	{
 		name: "Raj Gaikwad",
 		role: "Tech Team",
@@ -226,6 +203,28 @@ export const coreMembers: TeamMember[] = [
 			{
 				name: "linkedin",
 				url: "https://www.linkedin.com/in/mrunal-thakare-818184363/",
+			},
+		],
+	},
+	{
+		name: "Siddhesh Kavitkar",
+		role: "Tech Team",
+		imageUrl: "/team/siddesh.webp",
+		socials: [
+			{
+				name: "linkedin",
+				url: "https://www.linkedin.com/in/siddhesh-kavitkar-1a3469339/",
+			},
+		],
+	},
+	{
+		name: "Somshekhar Hunasimarad",
+		role: "Tech Team",
+		imageUrl: "/team/somshekhar.webp",
+		socials: [
+			{
+				name: "linkedin",
+				url: "https://www.linkedin.com/in/somshekhar-hunasimarad/",
 			},
 		],
 	},
