@@ -15,11 +15,11 @@ export const currentProjectsData: Project[] = [
 		category: "Project Collaboration",
 		lead: "Aryan Basnet (TY E&TC)",
 		team: [
-			"Siddesh Vatvikar (SY E&TC)",
+			"Siddesh Kavitkar (SY E&TC)",
 			"Sharal Vishwakarma (SY E&TC)",
 			"Karan Tikoo (TY COMP)",
 			"Yash Tawar (SY E&TC)",
-			"Shreyas (FY)",
+			"Shreyas Karade(FY)",
 		],
 		description:
 			"Marut is an advanced Flight Control Unit (FCU) being developed at AISSMS IOIT in collaboration with Team Aeroguardians. It combines cutting-edge control algorithms, real-time telemetry, and autonomous navigation for both fixed-wing and quadrotor aircraft. Built for precision, reliability, and innovation, Marut aims to set a new standard in Aerospace flight control R&D.",
