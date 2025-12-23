@@ -228,4 +228,26 @@ export const coreMembers: TeamMember[] = [
 			},
 		],
 	},
+	{
+		name: "Janhavi Gurav",
+		role: "Tech Team",
+		imageUrl: "/team/janhavi.webp",
+		socials: [
+			{
+				name: "linkedin",
+				url: "https://www.linkedin.com/in/janhavi-gurav-a793a72a5/",
+			},
+		],
+	},
+	{
+		name: "Raj Sonar",
+		role: "Tech Team",
+		imageUrl: "/team/raj.webp",
+		socials: [
+			{
+				name: "linkedin",
+				url: "https://www.linkedin.com/in/raj-sonar-9a6628291/",
+			},
+		],
+	},
 ];
