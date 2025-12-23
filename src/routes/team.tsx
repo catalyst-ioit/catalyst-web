@@ -98,7 +98,7 @@ function RouteComponent() {
 							<MemberCard
 								key={member.name}
 								member={member}
-								className={i == 0 ? "col-start-2" : ""}
+								className={i == 0 ? "sm:col-start-2" : ""}
 							/>
 						))}
 					</motion.div>

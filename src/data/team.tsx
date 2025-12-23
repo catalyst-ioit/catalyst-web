@@ -242,7 +242,7 @@ export const coreMembers: TeamMember[] = [
 	{
 		name: "Raj Sonar",
 		role: "Tech Team",
-		imageUrl: "/team/raj.webp",
+		imageUrl: "/team/raj_sonar.webp",
 		socials: [
 			{
 				name: "linkedin",
