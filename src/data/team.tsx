@@ -250,4 +250,15 @@ export const coreMembers: TeamMember[] = [
 			},
 		],
 	},
+	{
+		name: "Atharva Bobade",
+		role: "HR Team",
+		imageUrl: "/team/atharva.webp",
+		socials: [
+			{
+				name: "linkedin",
+				url: "https://www.linkedin.com/in/atharva-bobade-210038283/",
+			},
+		],
+	}
 ];
