@@ -1,9 +1,36 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { motion, type Variants } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { WavyLine } from '../components/ui/icons.tsx';
 
 export const Route = createFileRoute('/newsletter')({
   component: RouteComponent,
 });
+
+const pageVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+};
+
+const heroContainerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
+};
+
+const heroItemVariants: Variants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: 'easeOut' } },
+};
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+};
 
 type Issue = {
   month: string;
@@ -25,37 +52,53 @@ const issues: Issue[] = [
 ];
 
 function RouteComponent() {
+  const { ref: issuesRef, inView: issuesInView } = useInView({ triggerOnce: true, threshold: 0.15 });
+
   return (
-    <div className="overflow-hidden">
+    <motion.div className="overflow-hidden" initial="hidden" animate="visible" variants={pageVariants}>
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-center justify-center py-32 md:pt-60 md:pb-28 px-4 sm:px-6 md:px-8 text-center overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-25">
           <img src="/homepage/hero_desktop.webp" alt="Abstract background" className="w-full h-full object-cover" />
         </div>
-        <div className="relative z-10 max-w-3xl mx-auto"    >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium text-white leading-none tracking-tighter font-heading">
+        <motion.div
+          className="relative z-10 max-w-3xl mx-auto"
+          variants={heroContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.h1
+            className="text-5xl sm:text-6xl md:text-7xl font-medium text-white leading-none tracking-tighter font-heading"
+            variants={heroItemVariants}
+          >
             Our Monthly Wrapped
-          </h1>
-          <div className="mt-4 flex justify-center">
+          </motion.h1>
+          <motion.div className="mt-4 flex justify-center" variants={heroItemVariants}>
             <WavyLine id="newsletter-hero" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Issue Cards (team-style) */}
-      <section className="py-16 px-4 sm:px-6 md:px-8">
+      <section ref={issuesRef} className="py-16 px-4 sm:px-6 md:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="mt-3 text-4xl sm:text-5xl font-heading text-white font-medium">Latest Issue</h2>
         </div>
                   <div className="mt-4 flex justify-center">
-            <WavyLine id="newsletter-hero" />
+            <WavyLine id="newsletter-latest" />
           </div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate={issuesInView ? 'visible' : 'hidden'}
+        >
           {issues.map((issue) => (
-            <article
+            <motion.article
               key={issue.month}
               className="border border-white/20 bg-[#1a1a1a] overflow-hidden text-left flex flex-col w-full max-w-sm mx-auto"
+              variants={cardVariants}
             >
               <a href={issue.pdf} className="block" target="_blank" rel="noopener noreferrer">
                 <div className="aspect-[4/3] overflow-hidden">
@@ -89,10 +132,10 @@ function RouteComponent() {
                   </a>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
       </section>
-    </div>
+    </motion.div>
   );
 }
