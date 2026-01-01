@@ -6,7 +6,7 @@ import { Link } from '@tanstack/react-router';
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const navLinks = ['ABOUT', 'SERVICES', 'CONTACT', 'TEAM', 'PARTNERS', 'PROJECTS', 'JOIN US', 'GALLERY'];
+    const navLinks = ['ABOUT', 'SERVICES', 'NEWSLETTER', 'TEAM', 'PARTNERS', 'PROJECTS', 'JOIN US', 'GALLERY'];
 
     const NavItem: React.FC<{ href: string; className: string; children: React.ReactNode }> = ({ href, className, children }) => (
         <Link to={href} className={className}>
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
             <div className="grid grid-cols-10 row-span-1 items-center border-b border-white/20 w-full">
                 <NavItem href="/about" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">ABOUT</NavItem>
                 <NavItem href="/services" className="col-span-3 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">SERVICES</NavItem>
-                <NavItem href="/contact" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">CONTACT</NavItem>
+                <NavItem href="/newsletter" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">NEWSLETTER</NavItem>
                 <NavItem href="/team" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">TEAM</NavItem>
                 <div className="col-span-1 text-center h-full flex items-center justify-center">
                     <CursorHover variant="link"><GlobeIcon /></CursorHover>
@@ -32,7 +32,8 @@ const Header: React.FC = () => {
                 <NavItem href="/projects" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">PROJECTS</NavItem>
                 <NavItem href="/joinus" className="col-span-2 text-center h-full flex border-r border-white/20 hover:bg-white/5 transition-colors">JOIN US</NavItem>
                 <NavItem href="/gallery" className="col-span-2 text-center h-full flex hover:bg-white/5 transition-colors">GALLERY</NavItem>
-            </div>
+                
+                </div>
         </div>
     );
 
