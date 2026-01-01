@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
                             links={[
                                 { name: 'Join Us', href: '/joinus' },
                                 { name: 'Partner', href: '/parnters' },
-                                { name: 'Contact', href: '/contact' },
+                                { name: 'Newsletter', href: '/newsletter' },
                             ]}
                         />
                     </motion.div>
