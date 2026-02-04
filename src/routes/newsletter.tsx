@@ -48,6 +48,13 @@ const issues: Issue[] = [
     thumb: '/newsletter/issues/dec-thumb.webp',
     pdf: '/newsletter/issues/dec.pdf',
   },
+  {
+    month: 'January 2026',
+    title: 'Issue 2',
+    blurb: 'Kickstarting the new year with fresh insights.',
+    thumb: '/newsletter/issues/jan-thumb.webp',
+    pdf: '/newsletter/issues/jan.pdf',
+  },
   
 ];
 
