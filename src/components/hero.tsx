@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
                         </CursorHover>
                         <CursorHover variant="text">
                             <motion.p
-                                className="mt-6 text-lg sm:text-xl text-white/70"
+                                className="mt-6 text-lg sm:text-xl text-white/70 mb-4"
                                 variants={itemVariants}
                             >
                                 We turn your challenges into solutions.

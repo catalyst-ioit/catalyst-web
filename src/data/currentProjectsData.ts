@@ -1,6 +1,10 @@
 export interface Project {
-	title: string;
+	id: string;
+    title: string;
+	subtitle: string;
 	category: string;
+	subcategory: string;
+	src: string;
 	lead: string;
 	team: string[];
 	description: string;
@@ -10,9 +14,13 @@ export interface Project {
 
 export const currentProjectsData: Project[] = [
 	{
-		title:
-			"Marut - Advanced ARM Cortex-M4 based FCU with fixed wing and multi rotor support",
-		category: "Project Collaboration",
+		id: "marut",
+		title: "marut",
+		subtitle:
+			"Advanced ARM Cortex-M4 based FCU with fixed wing and multi rotor support",
+		category: "Hardware",
+		subcategory: "Embedded Systems & Hardware",
+		src: '/projects/marut.JPG',
 		lead: "Aryan Basnet (TY E&TC)",
 		team: [
 			"Siddesh Kavitkar (SY E&TC)",
@@ -32,25 +40,13 @@ export const currentProjectsData: Project[] = [
 		],
 		imageUrl: "/projects/fcuproject.jpg",
 	},
-	{
-		title: "Documentation & Knowledge Management System (DKMS)",
-		category: "Web Development & Cloud",
-		lead: "Sarvesh Kolte (SY IT)",
-		team: ["To be decided"],
-		description:
-			"Addressing critical barriers to faculty productivity and knowledge preservation, this project aims to build a centralized repository for institutional documents. It will replace inefficient, scattered storage methods with a unified, searchable, and secure system on the college's local network.",
-		features: [
-			"Highly efficient search through large volumes of documents using keywords and tags.",
-			"Intuitive interface for uploading and tagging digital or scanned documents.",
-			"Multi-level, role-based access controls for secure and flexible document sharing.",
-			"Public notice board feature for sharing announcements and documents by tagging users.",
-			"Built on a local NAS (Network Attached Storage) for fast and reliable access.",
-		],
-		imageUrl: "/projects/dkms.jpg",
-	},
-	{
-		title: "Affordable in-house Function Generator",
-		category: "Embedded Systems & Hardware",
+		{
+		id: "functiongenerator",
+		title: "Function Generator",
+		subtitle: "Affordable in-house Function Generator",
+		category: "Hardware",
+		subcategory: "Embedded Systems & Hardware",
+		src: '/projects/functiongenerator.JPG',
 		lead: "Arya Nirhali (SY E&TC)",
 		team: [
 			"Chandrashekhar Lade (SY ET)",
@@ -69,8 +65,53 @@ export const currentProjectsData: Project[] = [
 		imageUrl: "/projects/inhouse-function-generator.png",
 	},
 	{
+		id: "dkms",
+		title: "DKMS",
+		subtitle: "Documentation & Knowledge Management System",
+		category: "Software",
+		subcategory: "Web Development & Cloud",
+		  src: '/projects/tempdkms.JPG',
+		lead: "Sarvesh Kolte (SY IT)",
+		team: ["To be decided"],
+		description:
+			"Addressing critical barriers to faculty productivity and knowledge preservation, this project aims to build a centralized repository for institutional documents. It will replace inefficient, scattered storage methods with a unified, searchable, and secure system on the college's local network.",
+		features: [
+			"Highly efficient search through large volumes of documents using keywords and tags.",
+			"Intuitive interface for uploading and tagging digital or scanned documents.",
+			"Multi-level, role-based access controls for secure and flexible document sharing.",
+			"Public notice board feature for sharing announcements and documents by tagging users.",
+			"Built on a local NAS (Network Attached Storage) for fast and reliable access.",
+		],
+		imageUrl: "/projects/dkms.jpg",
+	},
+{
+id: "slm",
+title: "SLM",
+subtitle: "A custom-built 124M-parameter generative model architecturally optimized and trained on 1.6 billion tokens",
+category: "Software",
+subcategory: "Deep Learning",
+  src: '/projects/slm.JPG',
+"lead": "Namit Solanki (TY Instru)",
+"team": ["No Team Members"],
+"description": "This project focused on the end-to-end development of a custom, highly efficient Generative Pre-trained Transformer (GPT) model, deliberately scaled to 124 Million Parameters (based on the GPT-2 Small architecture). The core challenge was stabilizing the training of this large model on limited consumer-grade hardware (NVIDIA RTX 3050). The final V3 model was trained from scratch on a massive, cleaned, and concatenated corpus of 1.6 Billion tokens from the TinyStories and BookCorpus datasets, yielding a high-quality foundational model with exceptional narrative and structural coherence.",
+"features": [
+  "Model Architecture and Scaling: Implementation of a custom, highly parameterized 12-Layer, 12-Head Transformer network (n_embd=768).",
+  "Data Strategy: Successful use of Data Concatenation (merging TinyStories and BookCorpus) to prevent catastrophic forgetting and create a robust, generalized language base.",
+  "Performance Engineering: Implementation of torch.compile() and Automatic Mixed Precision (AMP) with bfloat16 to optimize forward and backward passes.",
+  "Resource Management: Designed a stable training regimen using Gradient Accumulation (Effective Batch Size = 32) to successfully train the 124M parameter model on 4GB VRAM.",
+  "Custom I/O Pipeline: Built a robust data pipeline using NumPy memmap and a custom get_batch function to handle the 1.6 Billion token data stream without using memory-intensive PyTorch DataLoaders.",
+  "Proven Generalization: Achieved a low final validation loss of 2.97 with a near-zero overfitting gap (Train Loss ≈ Val Loss), confirming excellent generalization and structural knowledge retention."
+],
+"imageUrl": ""
+},
+
+	{
+		id: "mosquitobot",
 		title: "Mosquito & Odor Automation Bot",
-		category: "Robotics & AI",
+        subtitle: "",
+		category: "Hardware",
+		subcategory: "Robotics & AI",
+		src: "/projects/mosquito-and-odor.png",
 		lead: "Aaron Mobby (SY E&TC)",
 		team: [
 			"Ansh Salunkhe (SY E&Tc)",
